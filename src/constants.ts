@@ -108,7 +108,7 @@ const experiences = [
   {
     title: "Data Engineer",
     company_name: "Codecertain",
-    icon: null,
+    icon: "",
     date: "Jan 2024 - Apr 2024",
     points: [
       "Formulated and tested hypotheses regarding the impact of pull request characteristics (e.g., number of changed lines, merge conflicts, issue attachment) on the likelihood of introducing bugs.",
@@ -193,7 +193,7 @@ const projects = [
         color: "orange-text-gradient",
       },
     ],
-    image: null,
+    image: "",
     source: "https://github.com/mohsenbakhit/enigmafy-ios",
   },
   {
@@ -205,7 +205,7 @@ const projects = [
         color: "white-text",
       },
     ],
-    image: null,
+    image: "",
     source: "https://github.com/mohsenbakhit/brainfuckpiler",
   },
 ];
