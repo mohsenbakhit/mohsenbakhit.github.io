@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, headingMotion } from "../utils";
+import { fadeIn, headingMotion } from "../utils/motion";
 import { styles } from "../styles";
 import { educations } from "../constants";
 import SectionWrapper from "../hoc/SectionWrapper";
@@ -11,6 +11,7 @@ type Education = {
   degree: string;
   years: string;
   awards: string[];
+  involvements: string[];
   courses: string[];
 };
 

@@ -2,13 +2,14 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { styles } from "../styles";
 import { contacts } from "../constants";
 
-function Header() {
+function Hero() {
   const [text] = useTypewriter({
     words: [
-      "Mohsen Bakhit",
+      "Mohsen",
       "a Software Engineer",
-      "a Weightlifting Enthusiast",
-      "a Bayern Munich Fan",
+      "an amateur weightlifter",
+      "a cinephile",
+      "a mediocre centre back",
     ],
     loop: 0,
     typeSpeed: 120,
@@ -22,7 +23,7 @@ function Header() {
       >
         <div>
           <h1 className={`${styles.heroHeadText} text-white text-center`}>
-            Hello! I am <span style={{ color: "#45d0e2" }}>{text}</span>
+            Hello! I'm <span style={{ color: "#45d0e2" }}>{text}</span>
             <Cursor />
           </h1>
           <h4
@@ -56,4 +57,4 @@ function Header() {
     </section>
   );
 }
-export default Header;
+export default Hero;

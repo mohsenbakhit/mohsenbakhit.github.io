@@ -43,7 +43,7 @@ function Navbar() {
           }}
         >
           <p className="text-white text-[18px] font-bold cursor-pointer">
-            Mohsen Bakhit;
+            Mohsen &#129302;
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">

@@ -1,11 +1,11 @@
 import React from "react";
 import { motion, useInView } from "framer-motion";
 import { styles } from "../styles";
-import { staggerSections } from "../utils";
+import { staggerSections } from "../utils/motion";
 
 const SectionWrapper = <P extends object>(
   Component: React.ComponentType<P>,
-  sectionId: string,
+  sectionId: string
 ): React.FC<P> => {
   return function HOC(props: P) {
     const ref = React.useRef(null);

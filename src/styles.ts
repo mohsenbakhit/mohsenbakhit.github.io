@@ -7,7 +7,7 @@ const styles = {
   heroSubText: "text-white font-medium text-[20px]",
 
   sectionHeadText: "text-white font-black text-[40px]",
-  cardPadding: "mt-4 flex flex-wrap gap-10",
+  cardPadding: "mt-4 flex flex-wrap gap-8",
 
   fullCard: "w-full green-pink-gradient p-[1px] rounded-[20px]",
   halfCard: "w-2/5 green-pink-gradient p-[1px] rounded-[20px]",

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, headingMotion } from "../utils";
+import { fadeIn, headingMotion } from "../utils/motion";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import SectionWrapper from "../hoc/SectionWrapper";

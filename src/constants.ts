@@ -1,4 +1,12 @@
-import { email, github, linkedin, portrait, ubc, cibc } from "./assets/index";
+import {
+  email,
+  github,
+  linkedin,
+  ubc,
+  cibc,
+  unitrack,
+  portrait,
+} from "./assets/index";
 
 const contacts = [
   {
@@ -16,11 +24,9 @@ const contacts = [
 ];
 
 const aboutInfo = {
-  description: `
-      I'm currently a Senior Computer Science student from the University of British Columbia (Vancouver).
-      In the past year, as part of UBC's co-op program, I've had the opportunity to work in the industry
-      and have gained crucial experience
-      `,
+  description: `I'm a  CS undergraduate student from the University of British Columbia.
+    With a year's worth of industrial software engineering experience, in form on co-ops and internships in startup and corporate environments, I have developed a strong foundation in backend development, data engineering, and cloud computing.
+    Beyond coding, I enjoy practicing my C&J and slide tackling strangers on weekends. You may also find me at the local cinema, watching the latest indie flick or planning a tour of a historical city across the ocean.`,
   picture: portrait,
 };
 
@@ -37,6 +43,10 @@ const navLinks = [
     id: "education",
     title: "Education",
   },
+  {
+    id: "project",
+    title: "Project",
+  },
 ];
 
 const experiences = [
@@ -44,12 +54,12 @@ const experiences = [
     title: "Application Developer Co-Op",
     company_name: "CIBC - Alternate Solutions Group",
     icon: cibc,
-    date: "September 2024 - May 2025",
+    date: "May 2023 - July 2023",
     points: [
-      "• Designed and Engineered a microservice that interfaces with the client database, systematically extracting and compiling comprehensive hourly and daily reports.",
-      "• Streamlined secure file transfers by implementing an internal tool using Go’s SSH library, reducing manual intervention by 99%.",
-      "• Engineered an API to extract transaction data from the VISA card network and transform payload into a SQL entry, reducing processing latency by 15%.",
-      "• Automated SQL query generation using Python and pandas, accelerating database population by 70% for SIT and UAT environments.",
+      "Designed and Engineered a micro-service that interfaces with the client database, systematically extracting and compiling comprehensive hourly and daily reports.",
+      "Streamlined secure file transfers by implementing an internal tool using Go’s SSH library, reducing manual intervention by 99%.",
+      "Engineered an API to extract transaction data from the VISA card network and transform payload into a SQL entry, reducing processing latency by 15%.",
+      "Automated SQL query generation for 10K+ rows, accelerating database population for SIT and UAT environments using Python and pandas.",
     ],
     tech: [
       {
@@ -58,29 +68,66 @@ const experiences = [
       },
       {
         name: "Azure",
-        color: "dark-blue-gradient",
+        color: "blue-text-gradient",
       },
     ],
   },
   {
-    title: "Backend Developer Co-Op",
-    company_name: "UBC - Department of Chemistry",
+    title: "Backend Engineer / Research Assistant",
+    company_name: "University of British Columbia",
     icon: ubc,
-    date: "May 2024 - August 2024",
+    date: "May 2024 - Sep 2024",
     points: [
-      "• Developed a RESTful API in Python using Flask to interface with the department’s database, enabling researchers to access and modify data.",
-      "• Engineered a data pipeline to process and analyze raw data from scientific instruments, reducing processing time by 50%.",
-      "• Implemented a web interface using React to visualize data and generate reports, improving data accessibility and analysis.",
+      "Developed a web application using FastAPI to establish communication protocols and manage job queuing for Psi4.",
+      "Configured web server and HTTPS proxy on an EC2 instance, allowing up to 1024 concurrent requests using NGINX.",
+      "Automated SLURM bash script generation for molecular calculations, result parsing for QCEngine, and file transfers to S3.",
+    ],
+    tech: [
+      {
+        name: "Python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Django",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Bash",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Angular",
+        color: "red-text-gradient",
+      },
+      {
+        name: "AWS",
+        color: "orange-text-gradient",
+      },
     ],
   },
   {
     title: "Data Engineer",
     company_name: "Codecertain",
     icon: null,
-    date: "January 2024 - April 2024",
+    date: "Jan 2024 - Apr 2024",
     points: [
-      "• Engineered a data pipeline to process and analyze raw data from scientific instruments, reducing processing time by 50%.",
-      "• Implemented a web interface using React to visualize data and generate reports, improving data accessibility and analysis.",
+      "Formulated and tested hypotheses regarding the impact of pull request characteristics (e.g., number of changed lines, merge conflicts, issue attachment) on the likelihood of introducing bugs.",
+      "Utilized statistical analysis and hypothesis testing to refine bug-prediction models, boosting their accuracy by 7%.",
+      "Engineered an API that scraped and curated pull request, gitdiff and commit hash information for big datasets of Java bugs (i.e. Bugswarm, Defects4j) using Python, BeautifulSoup, and Pandas.",
+    ],
+    tech: [
+      {
+        name: "Python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Pandas",
+        color: "green-text-gradient",
+      },
+      {
+        name: "sci-kit learn",
+        color: "orange-text-gradient",
+      },
     ],
   },
 ];
@@ -89,20 +136,86 @@ const educations = [
   {
     name: "University of British Columbia",
     icon: ubc,
-    degree: "Bachelors in Science - Computer Science",
+    degree: "Bachelors of Science in Computer Science",
     years: "2021 - 2026",
     awards: [
       "Dean’s Honor Roll 2021, 2023",
       "Trek Excellence Scholarship for Continuing Students 2021 (Top 5% in faculty)",
     ],
+    involvements: ["UBC Chess Club", "UBC Persian Students Club "],
     courses: [
-      "CPSC 340 (Machine Learning and Data Mining), CPSC 322 (Introduction to Artificial Intelligence)",
-      "CPSC 330 (Applied Machine Learning), CPSC 317 (Internet Computing), CPSC 320 (Algorithm Design & Analysis)",
+      "CPSC 340 (Machine Learning and Data Mining), CPSC 317 (Internet Computing), CPSC 320 (Algorithm Design & Analysis)",
       "CPSC 313 (Computer Hardware & Operating Systems), CPSC 304 (Relational Databases), CPSC 310 (Software Engineering)",
+      "CPSC 322 (Introduction to Artificial Intelligence), CPSC 436Q (Quantum Computing)",
     ],
   },
 ];
 
-const projects = [];
+const certs = [];
 
-export { contacts, aboutInfo, navLinks, experiences, educations, projects };
+const projects = [
+  {
+    name: "UniTrack",
+    description:
+      "A web application that helps students track their courses and grades",
+    tech: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "ASP.NET",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "MongoDB",
+        color: "green-text-gradient",
+      },
+      {
+        name: " C#",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "Typescript",
+        color: "green-text-gradient",
+      },
+    ],
+    image: unitrack,
+    source: "https://github.com/mohsenbakhit/can-i-grad",
+  },
+  {
+    name: "Enigmafy",
+    description:
+      "An iOS application that encrypts and decrypts messages using the Enigma algorithm",
+    tech: [
+      {
+        name: "Swift",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: null,
+    source: "https://github.com/mohsenbakhit/enigmafy-ios",
+  },
+  {
+    name: "Brainfuck Compiler",
+    description: "A Brainfuck compiler that converts Brainfuck code to binary",
+    tech: [
+      {
+        name: "C",
+        color: "white-text",
+      },
+    ],
+    image: null,
+    source: "https://github.com/mohsenbakhit/brainfuckpiler",
+  },
+];
+
+export {
+  contacts,
+  aboutInfo,
+  navLinks,
+  experiences,
+  educations,
+  certs,
+  projects,
+};
