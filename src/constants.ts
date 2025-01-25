@@ -26,7 +26,7 @@ const contacts = [
 const aboutInfo = {
   description: `I'm a  CS undergraduate student from the University of British Columbia.
     With a year's worth of industrial software engineering experience, in form on co-ops and internships in startup and corporate environments, I have developed a strong foundation in backend development, data engineering, and cloud computing.
-    Beyond coding, I enjoy practicing my C&J and slide tackling strangers on weekends. You may also find me at the local cinema, watching the latest indie flick or planning a tour of a historical city across the ocean.`,
+    Beyond coding, I enjoy reading fantasy and slide tackling strangers on weekends. You may also find me at the local cinema, watching the latest indie flick or planning a tour of a historical city across the ocean.`,
   picture: portrait,
 };
 
@@ -54,11 +54,11 @@ const experiences = [
     title: "Application Developer Co-Op",
     company_name: "CIBC - Alternate Solutions Group",
     icon: cibc,
-    date: "May 2023 - July 2023",
+    date: "Sep 2024 - Present",
     points: [
-      "Designed and Engineered a micro-service that interfaces with the client database, systematically extracting and compiling comprehensive hourly and daily reports.",
-      "Streamlined secure file transfers by implementing an internal tool using Go’s SSH library, reducing manual intervention by 99%.",
-      "Engineered an API to extract transaction data from the VISA card network and transform payload into a SQL entry, reducing processing latency by 15%.",
+      "Migrating existing RESTful APIs to a RPC model using gRPC's standard and protobufs",
+      "Addressed and resolved security failures and vulnerabilities in APIs which allowed for JSON and SQL injection by validating requests.",
+      "Optimized an API by parallelizing extraction of transaction data from VISA's network with its processing, resulting in a 15% reduction in processing latency by leveraging Goroutines.",
       "Automated SQL query generation for 10K+ rows, accelerating database population for SIT and UAT environments using Python and pandas.",
     ],
     tech: [
@@ -79,7 +79,7 @@ const experiences = [
     date: "May 2024 - Sep 2024",
     points: [
       "Developed a web application using FastAPI to establish communication protocols and manage job queuing for Psi4.",
-      "Configured web server and HTTPS proxy on an EC2 instance, allowing up to 1024 concurrent requests using NGINX.",
+      "Set up a CI/CD pipeline, allowing automated deployment of changes made to backend code to an EC2 instance using Github Actions",
       "Automated SLURM bash script generation for molecular calculations, result parsing for QCEngine, and file transfers to S3.",
     ],
     tech: [
