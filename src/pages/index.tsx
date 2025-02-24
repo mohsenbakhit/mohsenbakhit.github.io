@@ -1,114 +1,161 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [darkMode, setDarkMode] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className={darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}>
+      <header className="flex justify-between p-6 container mx-auto">
+        <h1 className="text-2xl font-bold">Mohsen Bakhit</h1>
+        <div className={`relative w-12 h-6 flex items-center ${darkMode ? 'bg-gray-300' : 'dark:bg-gray-600'} rounded-full p-1 cursor-pointer`} onClick={() => setDarkMode(!darkMode)}>
+          <label className={`w-4 h-4 rounded-full shadow-md transform duration-300 ${darkMode ? 'translate-x-5' : 'translate-x-0'}`} style={{ lineHeight: '1rem' }}>
+            {darkMode ? "🌙" : "☀️"}
+          </label>
         </div>
+      </header>
+
+      <main className="container mx-auto px-6">
+        <section className="text-center my-20 grid grid-cols-1 md:grid-cols-2 items-center justify-center">
+          <motion.img
+            src="me.jpeg" className="rounded w-80 h-auto mx-auto"
+            initial={{ x: -200, y: -20 }}
+            animate={{ x: 0, y: 0 }}
+          />
+          <div>
+            <motion.h2
+              className="text-4xl font-bold"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              Hi, I'm Mohsen
+            </motion.h2>
+            <p className={`${darkMode ? 'text-gray-500' : 'text-gray-700'} mt-4`}>
+              Software Engineer | Fantasy Enjoyer | Amateur Weightlifter 
+            </p>
+            <motion.h2
+              className="text-red-500 font-bold text-2xl mt-5 text-left"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              Stacks and Tools:
+            </motion.h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+              <div className="flex items-center">
+                <img src="python.svg" alt="Python" className="w-8 h-8 mr-2" />
+                <span>Python</span>
+              </div>
+              <div className="flex items-center">
+                <img src="go.png" alt="Go" className="w-8 h-8 mr-2" />
+                <span>Go</span>
+              </div>
+              <div className="flex items-center">
+                <img src="js.png" alt="JavaScript" className="w-8 h-8 mr-2" />
+                <span>JavaScript</span>
+              </div>
+              <div className="flex items-center">
+                <img src="cpp.png" alt="C++" className="w-8 h-auto mr-2" />
+                <span>C++</span>
+              </div>
+              <div className="flex items-center">
+                <img src="react.png" alt="React" className="w-12 h-auto mr-2" />
+                <span>React</span>
+              </div>
+              <div className="flex items-center">
+                <img src="pandas.svg" alt="pandas" className="w-8 h-8 mr-2" />
+                <span>pandas</span>
+              </div>
+              <div className="flex items-center">
+                <img src="tensorflow.png" alt="tensorflow" className="w-8 h-8 mr-2" />
+                <span>Tensorflow</span>
+              </div>
+              <div className="flex items-center">
+                <img src="git.png" alt="git" className="w-8 h-8 mr-2" />
+                <span>git</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="my-20">
+          <h3 className="text-3xl font-semibold">Experience</h3>
+          <motion.div
+            className="p-6 border rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+          >
+            <motion.img
+              className="w-20 h-auto"
+              src="mc.png"
+              alt="mastercard"
+            />
+            <p>Software Engineer Co-Op</p>
+          </motion.div>
+          <motion.div
+            className="p-6 border rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+          >
+            <motion.img
+              className="w-28 h-auto"
+              src="cibc.jpeg"
+              alt="mastercard"
+            />
+            <p>Software Engineer Co-Op</p>
+          </motion.div>
+          <motion.div
+            className="p-6 border rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+          >
+            <motion.img
+              className="w-40 h-auto"
+              src="ubc.png"
+              alt="mastercard"
+            />
+            <p>Software Engineer Co-Op</p>
+            <p>Undergraduate Research Assistant</p>
+          </motion.div>
+        </section>
+
+        <section className="my-20">
+          <h3 className="text-3xl font-semibold">Projects</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+            
+          <a href="https://github.com/mohsenbakhit/fbdr">
+            <motion.div
+              className="p-6 border rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }}
+            >
+                <h4 className="text-xl font-semibold">FBDR</h4>
+                <p className={`${darkMode ? 'text-gray-300' : 'dark:text-gray-600'}`}>A newsletter that generate custom text based on your favourite teams and players using Gemini API.<br/>Made as part of the Google x MLB Hackathon.</p>
+              </motion.div>
+            </a>
+            <a href="https://github.com/mohsenbakhit/gwent">
+              <motion.div
+                className="p-6 border rounded-lg shadow-lg"
+                whileHover={{ scale: 1.05 }}
+              >
+                <h4 className="text-xl font-semibold">Gwent</h4>
+                <p className={`${darkMode ? 'text-gray-300' : 'dark:text-gray-600'}`}>An Engine and decision-based AI using Markov chains and minimax for the famous Witcher 3 minigame.</p>
+              </motion.div>
+            </a>
+          </div>
+        </section>
+
+        <section className="text-center my-20">
+          <h3 className="text-3xl font-semibold">Get in Touch</h3>
+          <div className="flex justify-center gap-6 mt-4">
+            <a href="https://github.com/mohsenbakhit" className="text-2xl">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/mohsenbakhit" className="text-2xl">
+              <FaLinkedin />
+            </a>
+            <a href="mailto:mattbak09@proton.me" className="text-2xl">
+              <FaEnvelope />
+            </a>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
