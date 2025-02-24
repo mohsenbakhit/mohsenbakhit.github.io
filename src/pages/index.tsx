@@ -29,7 +29,7 @@ export default function Home() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              Hi, I'm Mohsen
+              Hi, I&apos;m Mohsen
             </motion.h2>
             <p className={`${darkMode ? 'text-gray-500' : 'text-gray-700'} mt-4`}>
               Software Engineer | Fantasy Enjoyer | Amateur Weightlifter 
@@ -43,7 +43,7 @@ export default function Home() {
             </motion.h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-2">
               <div className="flex items-center">
-                <img src="python.svg" alt="Python" className="w-8 h-8 mr-2" />
+                <img src="python.png" alt="Python" className="w-8 h-auto mr-2" />
                 <span>Python</span>
               </div>
               <div className="flex items-center">
@@ -59,7 +59,7 @@ export default function Home() {
                 <span>C++</span>
               </div>
               <div className="flex items-center">
-                <img src="react.png" alt="React" className="w-12 h-auto mr-2" />
+                <img src="react.png" alt="React" className="w-8 h-auto mr-2" />
                 <span>React</span>
               </div>
               <div className="flex items-center">
