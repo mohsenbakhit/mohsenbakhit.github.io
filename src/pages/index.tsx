@@ -89,8 +89,9 @@ export default function Home() {
                 <span className="bg-gray-700 px-2 py-1 rounded">TypeScript</span>
                 <span className="bg-gray-700 px-2 py-1 rounded">Prisma</span>
               </div>
-              <div className="mt-3">
-                <a href="#" className="text-blue-600 hover:underline text-sm">View Project →</a>
+              <div className="flex items-center">
+                <img src="react.png" alt="React" className="w-12 h-auto mr-2" />
+                <span>React</span>
               </div>
             </div>
             
